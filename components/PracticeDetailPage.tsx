@@ -14,7 +14,16 @@ function renderBody(blocks: RichBlock[]) {
     listItems = [];
     output.push(
       <ul className="service-rich-list" key={`list-${output.length}`}>
-        {items.map((item) => <li key={item}>{item}</li>)}
+        {items.map((item) =>
+          <li key={item}>
+            <ArrowUpRightIcon
+              className="service-rich-list-icon"
+              aria-hidden="true"
+            />
+
+            <span>{item}</span>
+          </li>
+        )}
       </ul>,
     );
   };
