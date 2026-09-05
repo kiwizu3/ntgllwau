@@ -1,0 +1,14 @@
+/copy-of-service-1 /criminal-law 301
+/service-1 /construction-law 301
+/copy-of-criminal-law-1 /family-law 301
+/copy-of-criminal-law /conveyancing 301
+/copy-of-property-law /commercial-law 301
+
+/practice-areas/criminal-law /criminal-law 301
+/practice-areas/construction-law /construction-law 301
+/practice-areas/family-law /family-law 301
+/practice-areas/conveyancing /conveyancing 301
+/practice-areas/commercial-law /commercial-law 301
+
+/practice-areas /services 301
+/contact /contact-us 301
