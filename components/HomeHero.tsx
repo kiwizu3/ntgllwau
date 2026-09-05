@@ -3,6 +3,7 @@ import Link from "next/link";
 import { assets } from "@/lib/assets";
 import { homeContent } from "@/lib/content";
 import BrandMark from "./BrandMark";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function HomeHero() {
   return (
@@ -18,7 +19,12 @@ export default function HomeHero() {
 
           <div className="hero-actions">
             <a className="button button-primary" href="tel:+61407000007">
-              Call 0407 000 007 <i aria-hidden="true">↗</i>
+              Call 0407 000 007
+
+              <ArrowUpRightIcon
+                className="button-icon"
+                aria-hidden="true"
+              />
             </a>
             <Link className="button button-ghost" href="/services">
               Services

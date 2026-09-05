@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 import { reviews } from "@/lib/content";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/outline";
 
 export default function ReviewCarousel() {
   const [index, setIndex] = useState(0);
@@ -21,9 +25,27 @@ export default function ReviewCarousel() {
         <div className="review-meta">
           <div><strong>{review.name}</strong></div>
           <div className="review-controls">
-            <button type="button" aria-label="Previous review" onClick={() => move(-1)}>←</button>
+            <button
+              type="button"
+              aria-label="Previous review"
+              onClick={() => move(-1)}
+            >
+              <ArrowLeftIcon
+                className="review-arrow-icon"
+                aria-hidden="true"
+              />
+            </button>
             <span aria-label={`Review ${index + 1} of ${reviews.length}`}>{String(index + 1).padStart(2, "0")} / {String(reviews.length).padStart(2, "0")}</span>
-            <button type="button" aria-label="Next review" onClick={() => move(1)}>→</button>
+            <button
+              type="button"
+              aria-label="Next review"
+              onClick={() => move(1)}
+            >
+              <ArrowRightIcon
+                className="review-arrow-icon"
+                aria-hidden="true"
+              />
+            </button>
           </div>
         </div>
       </div>

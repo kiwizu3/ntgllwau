@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { contact } from "@/lib/content";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function ContactBand() {
   return (
@@ -15,7 +16,14 @@ export default function ContactBand() {
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
             <a href={`tel:${contact.phoneHref}`}>{contact.phoneDisplay}</a>
           </div>
-          <Link className="button button-light" href="/contact-us">Contact Us <i>↗</i></Link>
+          <Link className="button button-light" href="/contact-us">
+            Contact Us
+
+            <ArrowUpRightIcon
+              className="button-icon"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent } from "react";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function ContactForm({
   includeSubject = false,
@@ -33,7 +34,17 @@ export default function ContactForm({
       <label><span>Email</span><input name="email" required type="email" autoComplete="email" inputMode="email" /></label>
       {includeSubject ? <label><span>Subject</span><input name="subject" required /></label> : null}
       <label><span>Message</span><textarea name="message" required rows={7} /></label>
-      <button className="button button-primary form-button" type="submit">{buttonLabel} <i aria-hidden="true">↗</i></button>
+      <button
+        className="button button-primary form-button"
+        type="submit"
+      >
+        {buttonLabel}
+
+        <ArrowUpRightIcon
+          className="button-icon"
+          aria-hidden="true"
+        />
+      </button>
     </form>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { practices } from "@/lib/content";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function PracticeGrid({ order }: { order?: readonly string[] }) {
   const items = order
@@ -24,7 +25,14 @@ export default function PracticeGrid({ order }: { order?: readonly string[] }) {
             <div className="practice-card-body">
               <h3>{practice.title}</h3>
               <p>{practice.summary}</p>
-              <div className="practice-card-link">Read More <i aria-hidden="true">↗</i></div>
+              <div className="practice-card-link">
+                <span>Read More</span>
+
+                <ArrowUpRightIcon
+                  className="practice-card-icon"
+                  aria-hidden="true"
+                />
+              </div>
             </div>
           </Link>
         );

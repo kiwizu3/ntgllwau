@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactBand from "@/components/ContactBand";
 import { practices, type RichBlock } from "@/lib/content";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 function renderBody(blocks: RichBlock[]) {
   const output: React.ReactNode[] = [];
@@ -58,7 +59,14 @@ export default function PracticeDetailPage({ slug }: { slug: string }) {
             <h1>{practice.title}</h1>
             <p>{practice.summary}</p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="/contact-us">Contact Us <i>↗</i></Link>
+              <Link className="button button-primary" href="/contact-us">
+                Contact Us
+
+                <ArrowUpRightIcon
+                  className="button-icon"
+                  aria-hidden="true"
+                />
+              </Link>
               <a className="button button-ghost" href="tel:+61407000007">Call 0407 000 007</a>
             </div>
           </div>
@@ -90,7 +98,14 @@ export default function PracticeDetailPage({ slug }: { slug: string }) {
           <span className="eyebrow light">Services</span>
           <div className="next-links">
             {practices.filter((item) => item.slug !== practice.slug).map((item) => (
-              <Link key={item.slug} href={`/${item.slug}`}>{item.title} <i>↗</i></Link>
+              <Link key={item.slug} href={`/${item.slug}`}>
+                <span>{item.title}</span>
+
+                <ArrowUpRightIcon
+                  className="next-link-icon"
+                  aria-hidden="true"
+                />
+              </Link>
             ))}
           </div>
         </div>

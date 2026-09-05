@@ -8,6 +8,7 @@ import ContactForm from "@/components/ContactForm";
 import LandingMotion from "@/components/LandingMotion";
 import { assets } from "@/lib/assets";
 import { homeContent } from "@/lib/content";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
@@ -36,7 +37,14 @@ export default function Home() {
             <span className="eyebrow">{homeContent.philosophyHeading}</span>
             <h2>{homeContent.motto}</h2>
             {homeContent.philosophy.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            <Link className="button button-ghost" href="/about">READ MORE <i>↗</i></Link>
+            <Link className="button button-ghost" href="/about">
+              READ MORE
+
+              <ArrowUpRightIcon
+                className="button-icon"
+                aria-hidden="true"
+              />
+            </Link>
           </div>
         </div>
       </section>

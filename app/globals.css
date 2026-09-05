@@ -183,17 +183,13 @@ main {
   position: relative;
 }
 
-.menu-button span {
-  position: absolute;
-  left: 12px;
-  width: 20px;
-  height: 1.5px;
-  background: var(--ink);
-  top: 18px;
+.menu-button {
+  align-items: center;
+  justify-content: center;
 }
 
-.menu-button span+span {
-  top: 25px;
+.menu-button .menu-icon {
+  display: block;
 }
 
 .mobile-nav {
@@ -246,20 +242,63 @@ main {
   transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
 }
 
-.button i,
-.text-link i,
-.practice-card-link i,
-.next-links i {
-  font-style: normal;
-}
-
-.button i {
+.button-icon {
   width: 28px;
   height: 28px;
+  padding: 7px;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 12px;
+  flex-shrink: 0;
+  stroke-width: 1.8;
+}
+
+.button-primary .button-icon {
+  background: var(--white);
+  color: var(--navy);
+}
+
+.button-ghost .button-icon {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.button-light .button-icon {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.button-small .button-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.practice-card-icon {
+  width: 31px;
+  height: 31px;
+  padding: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--white);
+  stroke-width: 1.8;
+}
+
+.next-link-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke-width: 1.8;
+}
+
+.review-arrow-icon {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.8;
+}
+
+.menu-icon {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.8;
 }
 
 .button:hover {
@@ -271,10 +310,10 @@ main {
   color: var(--white);
 }
 
-.button-primary i {
+/* .button-primary i {
   background: var(--white);
   color: var(--navy);
-}
+} */
 
 .button-primary:hover {
   background: #081e39;
@@ -286,10 +325,10 @@ main {
   color: var(--ink);
 }
 
-.button-ghost i {
+/* .button-ghost i {
   background: var(--ink);
   color: var(--white);
-}
+} */
 
 .button-ghost:hover {
   border-color: var(--ink);
@@ -300,10 +339,10 @@ main {
   color: var(--ink);
 }
 
-.button-light i {
+/* .button-light i {
   background: var(--ink);
   color: var(--white);
-}
+} */
 
 .button-small {
   min-height: 44px;
@@ -311,10 +350,10 @@ main {
   padding-right: 9px;
 }
 
-.button-small i {
+/* .button-small i {
   width: 28px;
   height: 28px;
-}
+} */
 
 .text-link {
   display: inline-flex;
@@ -705,7 +744,7 @@ main {
   font-weight: 700;
 }
 
-.practice-card-link i {
+/* .practice-card-link i {
   width: 31px;
   height: 31px;
   display: grid;
@@ -713,7 +752,7 @@ main {
   border-radius: 50%;
   background: var(--ink);
   color: var(--white);
-}
+} */
 
 /* Philosophy */
 .philosophy-home {
@@ -2134,20 +2173,6 @@ body {
   pointer-events: auto;
 }
 
-.menu-button span {
-  transition: transform .2s ease, top .2s ease;
-}
-
-.menu-button.is-open span:first-child {
-  top: 22px;
-  transform: rotate(45deg);
-}
-
-.menu-button.is-open span:last-child {
-  top: 22px;
-  transform: rotate(-45deg);
-}
-
 .desktop-nav a,
 .footer-grid a,
 .contact-inline a {
@@ -2620,14 +2645,16 @@ body {
   transform: scale(1.065) rotate(.35deg);
 }
 
-.home-motion-page.motion-enabled .practice-card-link i,
-.home-motion-page.motion-enabled .mini-arrow,
-.home-motion-page.motion-enabled .button i {
-  transition: transform .35s var(--motion-ease), background .25s ease, color .25s ease;
+.home-motion-page.motion-enabled .practice-card-icon,
+.home-motion-page.motion-enabled .button-icon {
+  transition:
+    transform .35s var(--motion-ease),
+    background .25s ease,
+    color .25s ease;
 }
 
-.home-motion-page.motion-enabled .practice-card:hover .practice-card-link i,
-.home-motion-page.motion-enabled .button:hover i {
+.home-motion-page.motion-enabled .practice-card:hover .practice-card-icon,
+.home-motion-page.motion-enabled .button:hover .button-icon {
   transform: rotate(42deg);
 }
 

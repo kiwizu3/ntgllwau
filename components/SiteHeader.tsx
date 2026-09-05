@@ -4,6 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import BrandMark from "./BrandMark";
+import {
+  ArrowUpRightIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 
 const practicePaths = ["/criminal-law", "/construction-law", "/family-law", "/conveyancing", "/commercial-law"];
 
@@ -55,8 +60,16 @@ export default function SiteHeader() {
 
         <div className="header-actions">
           <a className="phone-link" href="tel:+61407000007">0407 000 007</a>
-          <Link className="button button-small button-primary" href="/contact-us">
-            Contact Us <i aria-hidden="true">↗</i>
+          <Link
+            className="button button-small button-primary"
+            href="/contact-us"
+          >
+            Contact Us
+
+            <ArrowUpRightIcon
+              className="button-icon"
+              aria-hidden="true"
+            />
           </Link>
           <button
             className={`menu-button ${open ? "is-open" : ""}`}
@@ -66,8 +79,17 @@ export default function SiteHeader() {
             aria-label={open ? "Close navigation" : "Open navigation"}
             onClick={() => setOpen((value) => !value)}
           >
-            <span />
-            <span />
+            {open ? (
+              <XMarkIcon
+                className="menu-icon"
+                aria-hidden="true"
+              />
+            ) : (
+              <Bars3Icon
+                className="menu-icon"
+                aria-hidden="true"
+              />
+            )}
           </button>
         </div>
       </div>
