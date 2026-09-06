@@ -1127,6 +1127,66 @@ main {
   line-height: 1.58;
 }
 
+.team-name-row {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.team-name-row h3 {
+  margin: 0;
+}
+
+.team-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  gap: 8px;
+}
+
+.team-socials a {
+  min-height: 36px;
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  background: var(--white);
+  color: var(--ink);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.team-socials a svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  stroke-width: 1.8;
+}
+
+.team-socials a:hover {
+  transform: translateY(-2px);
+
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
 /* Service detail */
 .service-hero {
   padding: 66px 0 82px;
@@ -1783,12 +1843,16 @@ main {
     height: 540px;
   }
 
-  .process-heading,
-  .editorial-media,
-  .service-aside,
-  .contact-intro {
-    position: static;
-  }
+.process-heading,
+.service-aside,
+.contact-intro {
+  position: static;
+}
+
+.editorial-media {
+  position: relative;
+  top: auto;
+}
 
   .process-steps article {
     grid-template-columns: 52px 1fr;
@@ -1802,11 +1866,11 @@ main {
     font-size: clamp(58px, 11vw, 88px);
   }
 
-  .editorial-media,
+  /* .editorial-media,
   .editorial-media img {
     min-height: 520px;
     height: 520px;
-  }
+  } */
 
   .service-hero-media {
     height: 500px;
@@ -1999,11 +2063,11 @@ main {
     font-size: 15px;
   }
 
-  .editorial-media,
+  /* .editorial-media,
   .editorial-media img {
     height: 440px;
     min-height: 440px;
-  }
+  } */
 
   .team-card {
     display: block;
@@ -4122,5 +4186,131 @@ select {
 
     padding: 16px 82px 16px 18px;
     border-radius: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  .team-socials a {
+    min-height: 34px;
+    padding: 0 11px;
+  }
+
+  .team-socials a svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/* Contact band responsive fix */
+
+@media (max-width: 860px) {
+  .contact-band-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .contact-band h2 {
+    max-width: 100%;
+  }
+
+  .contact-band-copy {
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .contact-band-copy p {
+    margin-top: 0;
+  }
+}
+
+.contact-inline a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 620px) {
+  .contact-band {
+    padding: 64px 0;
+  }
+
+  .contact-band-grid {
+    gap: 30px;
+  }
+
+  .contact-band h2 {
+    font-size: clamp(48px, 14vw, 68px);
+    line-height: 0.95;
+  }
+
+  .contact-band-copy p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .contact-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact-band-copy .button {
+    margin-top: 20px;
+  }
+}
+
+/* About philosophy image mobile safety fix */
+
+@media (max-width: 980px) {
+  .editorial-media {
+    position: relative;
+    top: auto;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .editorial-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .editorial-grid {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-hero {
+    position: relative;
+    z-index: 2;
+  }
+}
+@media (max-width: 860px) {
+  .editorial-media {
+    height: 460px;
+    min-height: 460px;
+  }
+
+  .editorial-media img {
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .editorial-media {
+    height: 380px;
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 420px) {
+  .editorial-media {
+    height: 340px;
+    min-height: 340px;
   }
 }

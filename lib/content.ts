@@ -443,7 +443,20 @@ const teamSource = [
       "Since 2010, Hanna has practiced for prestigious firms in Sydney CBD, the Western Suburbs and Wollongong NSW.",
       "In 2017, Hanna founded his own practice because he believes being a lawyer is a public service before it is a private profession.",
       "At all times, Hanna is your point of contact at Nightingale Lawyers."
-    ]
+    ],
+    socials: [
+
+      {
+        type: "linkedin",
+        label: "LinkedIn",
+        href: "https://au.linkedin.com/in/hanna-ayoub-07017b5b",
+      },
+      {
+        type: "email",
+        label: "Email",
+        href: "mailto:Hanna@nightingalelawyers.com",
+      }
+    ],
   },
   {
     "imageIndex": 1,
@@ -453,7 +466,14 @@ const teamSource = [
       "Rachel is a lawyer and the engine of the team. She assists in every part of the office.",
       "On one hand, she assists Hanna in dealing with legal details. She is an incredible researcher, with a great legal mind, who can perceive and narrow the issues. Rachel knows how to find the cases and law to back up Hanna's advice. She is an incredible researcher who is integral to the team's success.",
       "On the other hand Rachel makes sure the tasks that are delegated by Hanna are promptly achieved. She manages the paralegals and has managed a team of three at one point in time. Once the fledgling paralegals take flight Rachel releases them to greater heights in the profession."
-    ]
+    ],
+    socials: [
+      {
+        type: "email",
+        label: "Email",
+        href: "mailto:Rachel@nightingalelawyers.com",
+      }
+    ],
   },
   {
     "imageIndex": 2,
@@ -463,7 +483,8 @@ const teamSource = [
       "Stephanie is a law student with Western Sydney University. Stephanie is the 5th law student to work with Nightingale Lawyers and is responsible for learning our ways and undertaking drafting, researching and reviewing.",
       "Nightingale Lawyers is proud to assist young paralegals become lawyers. Stephanie's predecessors have all moved on to other successful careers in the profession and we stay in regular contact.",
       "If you are interested in becoming a paralegal please email our team leader."
-    ]
+    ],
+    socials: [],
   },
   {
     "imageIndex": 3,
@@ -471,7 +492,8 @@ const teamSource = [
     "name": "Sylvie Tannous",
     "bio": [
       "Sylvie is responsible for the administration of the office. Working closely with Rachel she makes sure the administration is undertaken efficiently and effectively so that Hanna, the principal lawyer, can work with you personally on your matters."
-    ]
+    ],
+    "socials": []
   }
 ];
 
@@ -479,6 +501,7 @@ export const team = teamSource.map((member) => ({
   role: member.role,
   name: member.name,
   bio: member.bio,
+  socials: member.socials,
   image: assets.team[member.imageIndex],
 }));
 

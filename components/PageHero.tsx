@@ -2,7 +2,7 @@ export default function PageHero({ eyebrow, title, intro }: { eyebrow: string; t
   return (
     <section className="page-hero">
       <div className="shell page-hero-grid">
-        <div className="hero-kicker"><span className="status-dot" /> {eyebrow}</div>
+        <div className="hero-kicker">{eyebrow}</div>
         <div className="page-hero-copy">
           <h1>{title}</h1>
           {intro ? <p>{intro}</p> : null}
