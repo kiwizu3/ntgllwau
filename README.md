@@ -1,4 +1,4 @@
-# Nightingale Lawyers — Poppins animated redesign
+# Nightingale Lawyers - redesign
 
 A Next.js redesign of the existing Nightingale Lawyers website using the polished animated landing-page layout, Google Poppins, clean semantic routes, and source-site copy restored from the supplied Playwright scrape.
 
